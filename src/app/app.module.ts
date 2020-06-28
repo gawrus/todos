@@ -9,6 +9,14 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from './home/home.component';
+import { environment } from 'src/environments/environment';
+import { AuthModule } from './auth/auth.module';
+import { reducers } from './app.reducer';
+import { StoreModule } from '@ngrx/store';
+import { AuthService } from './auth/auth.service';
+import { UIService } from './shared/ui.service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
@@ -22,9 +30,13 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AuthModule,
+    AngularFirestoreModule,
+    StoreModule.forRoot(reducers)
   ],
-  providers: [],
+  providers: [AuthService, UIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
