@@ -5,6 +5,11 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  {
+    path: 'todolist',
+    loadChildren: () => import('./todo-list/todo-list.module').then(m => m.TodoListModule)
+  }
+  //{ path: 'todolist', loadChildren: './todo-list/todo-list.module#TodoListModule', canLoad: [AuthGuard] }
 ];
 
 @NgModule({
