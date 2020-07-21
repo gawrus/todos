@@ -17,6 +17,7 @@ import { AuthService } from './auth/auth.service';
 import { UIService } from './shared/ui.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { TodoService } from './todo-list/todo.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AngularFirestoreModule,
     StoreModule.forRoot(reducers)
   ],
-  providers: [AuthService, UIService],
+  providers: [AuthService, TodoService, UIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

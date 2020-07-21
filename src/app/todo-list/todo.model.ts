@@ -4,6 +4,6 @@ export interface TodoList{
   id: string;
   name: string;
   date?: Date;
-  state?: 'completed' | 'cancelled' | null;
+  state?: 'new' | 'completed' | 'cancelled' | null;
   todos: TodoItem[];
 }

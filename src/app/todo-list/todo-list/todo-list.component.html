@@ -1,1 +1,10 @@
-<p>todo-list works!</p>
+<button mat-button (click)="onAddItem()">Add</button>
+<button mat-button (click)="onSave()">Save</button>
+
+<div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="flex-start">
+    <app-todo-details *ngFor="let item of todos" fxFlex="0 1 calc(33.3% - 20px)" >
+
+    </app-todo-details>
+</div>
+
+

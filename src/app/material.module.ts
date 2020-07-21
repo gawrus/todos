@@ -44,17 +44,25 @@ import { NgModule } from '@angular/core';
     MatSnackBarModule
   ],
   exports:[
-    MatSliderModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatIconModule,
     MatListModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   providers: [
     MatDatepickerModule,
