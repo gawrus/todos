@@ -5,11 +5,13 @@ import { SharedModule } from '../shared/shared.module';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { todoReducer } from './todo-reducer';
 import { StoreModule } from '@ngrx/store';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
 
 @NgModule({
   declarations: [
     TodoListComponent,
-    TodoDetailsComponent],
+    TodoDetailsComponent,
+    TodoEditComponent],
   imports: [
     SharedModule,
     TodoListRoutingModule,
