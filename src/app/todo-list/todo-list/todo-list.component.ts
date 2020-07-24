@@ -37,7 +37,8 @@ export class TodoListComponent implements OnInit {
   onSave(){
     this.todosService.saveTodoList();
   }
-  onEdit(item: TodoItem){
+  onEdit(item: TodoList){
+    this.todosService.editTodoList(item);
     this.router.navigate(['edittodo'],{relativeTo:this.route});
   }
 }

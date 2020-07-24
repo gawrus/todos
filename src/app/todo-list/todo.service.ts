@@ -1,3 +1,4 @@
+import { TodoItem } from './todo-item.model';
 import { TodoList } from './todo.model';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -32,6 +33,10 @@ export class TodoService{
     };
 
     this.store.dispatch(new Todo.EditTodoList(newTodo));
+  }
+
+  editTodoList(todo: TodoList){
+    this.store.dispatch(new Todo.EditTodoList(todo));
   }
 
   saveTodoList(){

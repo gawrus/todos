@@ -1,1 +1,28 @@
-<p>todo-edit works!</p>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form" [formGroup]="form">
+       <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input  matInput  placeholder="First name"  [formControlName]="'name'" required>
+        </mat-form-field>
+        <div formArrayName="todos" *ngFor="let todoItem of todos.controls; index as i">
+          <div [formGroupName]="i" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
+            <div fxFlexAlign="center">
+              <mat-checkbox style="height: 16px;" [formControlName]="'checked'"></mat-checkbox>
+            </div>
+            <mat-form-field class="full-width">
+              <input  matInput  [formControlName]="'name'">
+            </mat-form-field>
+          </div>
+
+        </div>
+
+    </form>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-icon-button>
+      <mat-icon>note_add</mat-icon>
+    </button>
+  </mat-card-footer>
+
+</mat-card>
